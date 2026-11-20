@@ -1,0 +1,21 @@
+# 构建上下文裁剪：镜像里只装依赖、只拷源码，本地产物和密钥一律不进去
+node_modules
+**/node_modules
+dist
+**/dist
+unpackage
+**/.env
+**/.env.*
+!.env.production.example
+**/uploads
+**/data
+.git
+.gitignore
+.DS_Store
+*.log
+*.tsbuildinfo
+.vite
+**/.vite
+.workbuddy
+docs
+backups

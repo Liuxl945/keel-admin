@@ -1,0 +1,15 @@
+packages:
+  - server
+  - admin
+  - app
+
+# pnpm 10+ 默认禁止依赖执行安装脚本。
+# esbuild / vue-demi / watcher 需要平台二进制或构建步骤；
+# better-sqlite3 自带 musl 预编译二进制，跳过其 node-gyp 本地编译（生产用 PostgreSQL，sqlite 仅本地试用）。
+allowBuilds:
+  '@parcel/watcher': true
+  better-sqlite3: false
+  core-js: false
+  core-js-pure: false
+  esbuild: true
+  vue-demi: true

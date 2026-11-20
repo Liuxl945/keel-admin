@@ -1,0 +1,21 @@
+{
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "客户端基座"
+      }
+    },
+    {
+      "path": "pages/login/login",
+      "style": {
+        "navigationBarTitleText": "登录"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarBackgroundColor": "#1f3a5f",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f5f7fa"
+  }
+}

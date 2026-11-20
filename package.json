@@ -1,0 +1,23 @@
+{
+  "name": "keel-admin",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Keel（龙骨）：自带在线开发能力的全栈后台基座（server + admin + app）",
+  "packageManager": "pnpm@12.4.2",
+  "scripts": {
+    "db:up": "bash scripts/db-up.sh",
+    "db:down": "bash scripts/db-down.sh",
+    "db:reset": "bash scripts/db-reset.sh",
+    "db:logs": "bash scripts/db-logs.sh",
+    "db:shell": "bash scripts/db-shell.sh",
+    "dev:server": "bash scripts/dev-server.sh",
+    "dev:admin": "pnpm --filter admin dev",
+    "dev:app": "pnpm --filter app dev:h5",
+    "seed": "pnpm --filter server seed",
+    "typecheck": "pnpm -r typecheck",
+    "build": "pnpm -r build"
+  },
+  "devDependencies": {
+    "node-gyp": "^11.4.2"
+  }
+}

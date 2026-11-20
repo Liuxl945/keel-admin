@@ -1,0 +1,159 @@
+:root {
+  --app-aside-bg: #1f2d3d;
+  --app-header-height: 56px;
+  --app-content-bg: #f5f7fa;
+  /* 主内容区内边距：BasicDialog/AppDialog 全屏弹窗据此内缩，改这里即可 */
+  --app-main-padding: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', sans-serif;
+  background: var(--app-content-bg);
+  color: #303133;
+}
+
+/* 所有弹窗统一顶边距，配合 AppDialog 的滚动区；全屏弹窗由自身控制位置 */
+.el-dialog:not(.is-fullscreen) {
+  margin-top: 10vh !important;
+}
+
+.app-dialog .el-dialog__body {
+  padding-top: 4px;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+  min-height: 0;
+}
+
+/* 单表页面：ProTable 占满内容区剩余高度 */
+.page > .pro-table {
+  flex: 1;
+  min-height: 0;
+}
+
+.mr-4 {
+  margin-right: 4px;
+}
+
+.text-muted {
+  color: #909399;
+}
+
+.mt-16 {
+  margin-top: 16px;
+}
+
+/* ---------- 表格对比度 ---------- */
+.el-table {
+  --el-table-header-bg-color: #edf2f8;
+  --el-table-header-text-color: #1f2d3d;
+  --el-table-text-color: #303133;
+  --el-table-border-color: #e1e7ef;
+  --el-table-row-hover-bg-color: #eef5ff;
+  --el-table-tr-bg-color: #ffffff;
+}
+
+.el-table th.el-table__cell {
+  background: var(--el-table-header-bg-color);
+  font-weight: 600;
+  color: var(--el-table-header-text-color);
+}
+
+.el-table th.el-table__cell > .cell {
+  font-weight: 600;
+}
+
+/* 表头与表体之间用略深的线分隔 */
+.el-table th.el-table__cell {
+  border-bottom-color: #d7dfe9;
+}
+
+/* 表格行统一背景，不启用隔行变色（斑马纹） */
+.el-table__body tr > td.el-table__cell {
+  background: var(--el-table-tr-bg-color);
+}
+
+.el-table__body tr:hover > td.el-table__cell {
+  background: var(--el-table-row-hover-bg-color) !important;
+}
+
+/* ---------- 深色模式 ---------- */
+html.dark {
+  --app-content-bg: #141414;
+
+  body {
+    color: var(--el-text-color-primary);
+    background: var(--app-content-bg);
+  }
+
+  .el-table {
+    --el-table-header-bg-color: #262727;
+    --el-table-header-text-color: #e5eaf3;
+    --el-table-text-color: #e5eaf3;
+    --el-table-border-color: #363637;
+    --el-table-row-hover-bg-color: #1f2a3d;
+    --el-table-tr-bg-color: #1d1e1f;
+  }
+
+  .el-table th.el-table__cell {
+    border-bottom-color: #414243;
+  }
+
+  .pro-table,
+  .panel,
+  .stat-card,
+  .dashboard__panel,
+  .profile__side,
+  .profile__card,
+  .monitor-card,
+  .monitor-panel,
+  .log-page__tabs,
+  .layout__header,
+  .tags-view {
+    background: var(--el-bg-color);
+  }
+
+  .layout__header,
+  .tags-view {
+    border-bottom-color: var(--el-border-color);
+  }
+
+  .dashboard__tips {
+    color: var(--el-text-color-regular);
+    background: var(--el-fill-color-light);
+  }
+
+  .dashboard__list {
+    color: var(--el-text-color-regular);
+  }
+
+  .dashboard__title,
+  .dashboard__panel-title,
+  .monitor__title,
+  .monitor-panel__title,
+  .profile__name,
+  .profile__card-title,
+  .notice-detail__title,
+  .dict-data-head__title,
+  .file-cell__name,
+  .layout__username {
+    color: var(--el-text-color-primary);
+  }
+}
